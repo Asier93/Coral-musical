@@ -6,12 +6,19 @@
       name="viewport"
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <meta title="Coral Musical" />
+    <!-- For Chrome, Edge, and other browsers -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- For Firefox -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color:toolbar" content="#ffffff" />
+    <title>Coral Musical</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="./js/tap-to-teleport.js" type="text/javascript"></script>
+    <script src="./js/interaction.js" type="text/javascript"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene cursor="rayOrigin: mouse">
       <a-assets>
         <img
           src="./assets/textures/underwaterskybox.jpg"
@@ -19,29 +26,6 @@
           alt="Fondo de arena"
         />
       </a-assets>
-
-      <!-- Camera User View 1.6 Height -->
-      <a-entity id="cameraRig" position="0 1.6 0">
-        <a-entity
-          id="head"
-          position="0 0 0"
-          camera="userHeight:1.6"
-          look-controls="pointerLockEnabled:true"
-        >
-          <a-entity
-            position="0.1 -0.1 0"
-            touch-listener
-            teleport-controls="cameraRig: #cameraRig;
-               teleportOrigin: #head;
-               startEvents:starttouch;
-               endEvents:endtouch;
-               curveShootingSpeed:15;
-               hitCylinderRadius:1;
-               collisionEntities: [ground]"
-          >
-          </a-entity>
-        </a-entity>
-      </a-entity>
 
       <!-- Skybox -->
       <a-sky src="#skybox"></a-sky>
@@ -52,6 +36,8 @@
         color="blue"
         scale="1 2 1"
         sound="src: #cajaRitmo; on: click"
+        color-interaction
+        data-hover-color="red"
       ></a-box>
 
       <!-- Arrecife de coral para el secuenciador -->
@@ -61,6 +47,8 @@
         radius="1"
         height="2"
         sound="src: #secuenciador; on: click"
+        color-interaction
+        data-hover-color="yellow"
       ></a-cylinder>
 
       <!-- Arrecife de coral para las melodías -->
@@ -69,6 +57,8 @@
         color="red"
         radius="1"
         sound="src: #melodias; on: click"
+        color-interaction
+        data-hover-color="purple"
       ></a-sphere>
 
       <!-- Fondo oceánico -->
@@ -84,6 +74,41 @@
       <audio id="cajaRitmo" src="./assets/audio/percusiones.mp3"></audio>
       <audio id="secuenciador" src="./assets/audio/rattle-bass.mp3"></audio>
       <audio id="melodias" src="./assets/audio/oboe-staccato.mp3"></audio>
+
+      <!-- Componentes para interactividad -->
+      <!-- Cámara con controles de mirada y teclado-->
+      <!-- Camera User View 1.6 Height -->
+      <a-entity id="cameraRig" position="0 1.6 0">
+        <a-entity
+          id="head"
+          position="0 0 0"
+          camera="userHeight:1.6"
+          look-controls="pointerLockEnabled:true"
+        >
+          <!-- Cursor con mirilla (anillo) -->
+          <a-entity cursor="rayOrigin: mouse">
+            <a-ring
+              position="0 0 -1"
+              scale="0.03 0.03 0.03"
+              color="yellow"
+              id="cursorRing"
+              animation="property: scale; to: 0.04 0.04 0.04; loop: true; dur: 1000"
+            ></a-ring>
+          </a-entity>
+
+          <a-entity
+            position="0.1 -0.1 0"
+            touch-listener
+            teleport-controls="cameraRig: #cameraRig;
+         teleportOrigin: #head;
+         startEvents:starttouch;
+         endEvents:endtouch;
+         curveShootingSpeed:15;
+         hitCylinderRadius:1;
+         collisionEntities: [ground]"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>

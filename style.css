@@ -1,0 +1,9 @@
+element {
+    -webkit-animation-name: example-animation;
+    animation-name: example-animation;
+    cursor: -webkit-grab;
+    cursor: grab;
+    -webkit-transition: property 0.3s ease;
+    transition: property 0.3s ease;
+}
+  
