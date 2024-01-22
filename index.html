@@ -20,15 +20,26 @@
   <body>
     <a-scene cursor="rayOrigin: mouse">
       <a-assets>
-        <img
-          src="./assets/textures/underwaterskybox.jpg"
-          id="skybox"
-          alt="Fondo de arena"
-        />
+        <img src="./assets/textures/underwaterskybox.jpg" id="skybox" alt="Fondo de arena" />
+        <img src="./assets/textures/LogoCoralMusical.png" id="logo" alt="Logo Coral Musical" />
+        <a-asset-item id="alga00" src="./assets/models/alga00.glb"></a-asset-item>
+        <a-asset-item id="algaprincipal01" src="./assets/models/algaprincipal01.glb"></a-asset-item>
+        <a-asset-item id="algaprincipal02" src="./assets/models/algaprincipal02.glb"></a-asset-item>
+        <a-asset-item id="algasrelleno" src="./assets/models/algasrelleno.glb"></a-asset-item>
+        <a-asset-item id="algarelleno01" src="./assets/models/algarelleno01.glb"></a-asset-item>
+        <a-asset-item id="corallilatrompa" src="./assets/models/corallilatrompa.glb"></a-asset-item>
       </a-assets>
 
       <!-- Skybox -->
       <a-sky src="#skybox"></a-sky>
+
+      <!-- Vientos -->
+      <a-entity gltf-model="#corallilatrompa" position="0 0 0" scale="5 5 5"></a-entity>
+      <a-entity gltf-model="#alga00.glb" scale="10 10 10" id="alga00"></a-entity>
+      <!-- Cuerdas -->
+      <!-- Percusiones -->
+      <!-- Relleno -->
+      <a-entity gltf-model="#alga00" scale="10 10 10"></a-entity>
 
       <!-- Arrecife de coral para la caja de ritmo -->
       <a-box
