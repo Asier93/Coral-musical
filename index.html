@@ -20,62 +20,129 @@
   <body>
     <a-scene cursor="rayOrigin: mouse">
       <a-assets>
-        <img src="./assets/textures/underwaterskybox.jpg" id="skybox" alt="Fondo de arena" />
-        <img src="./assets/textures/LogoCoralMusical.png" id="logo" alt="Logo Coral Musical" />
+        <img
+          src="./assets/textures/underwaterskybox.jpg"
+          id="skybox"
+          alt="Fondo de arena"
+        />
+        <img
+          src="./assets/textures/LogoCoralMusical.png"
+          id="logo"
+          alt="Logo Coral Musical"
+        />
       </a-assets>
 
       <!-- Skybox -->
       <a-sky src="#skybox"></a-sky>
 
-       <!-- relleno -->
-      <!-- algas -->  
-      <a-entity id="algaprincipal02" scale="4 4 4" position="7 2 -15" class="algas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipal02.glb?v=1705931872333"></a-entity>
-      
-      <a-entity id="algasrelleno" scale="6 6 6" position="-10 2.4 -15" class="algas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algasrelleno.glb?v=1705931873644"></a-entity>
-      
+      <!-- relleno -->
+      <!-- algas -->
+      <a-entity
+        id="algaprincipal02"
+        scale="4 4 4"
+        position="7 2 -15"
+        class="algas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipal02.glb?v=1705931872333"
+      ></a-entity>
+
+      <a-entity
+        id="algasrelleno"
+        scale="6 6 6"
+        position="-10 2.4 -15"
+        class="algas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algasrelleno.glb?v=1705931873644"
+      ></a-entity>
+
       <!-- base roca y corales -->
-      <a-entity scale="0.1 0.1 0.1" position="0 0 -15" class="algas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralbase.glb?v=1705931876384"></a-entity>
-      
+      <a-entity
+        scale="0.1 0.1 0.1"
+        position="0 0 -15"
+        class="algas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralbase.glb?v=1705931876384"
+      ></a-entity>
+
       <!-- percusiones -->
       <!-- anemona campanas tubulares -->
-      <a-entity id="campanastubulares" scale=".5 .5 .5" position="-5 0 -10" class="percusion"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacampanastubulares.glb?v=1705931874189"></a-entity>
-      
-       <a-entity id="marimba" scale="1 1 1" position="-9 -32 -10" class="percusion"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralmoradomarimba.glb?v=1705931877526"
-                sound="src: #cajaRitmo; on: click"
-                color-interaction
-                data-hover-color="red"></a-entity>
+      <a-entity
+        id="campanastubulares"
+        scale=".5 .5 .5"
+        position="-5 0 -10"
+        class="percusion"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacampanastubulares.glb?v=1705931874189"
+      ></a-entity>
+
+      <a-entity
+        id="marimba"
+        scale="1 1 1"
+        position="-9 -32 -10"
+        class="percusion"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralmoradomarimba.glb?v=1705931877526"
+        sound="src: #cajaRitmo; on: click"
+        color-interaction
+        data-hover-color="red"
+      ></a-entity>
 
       <!-- vientos -->
-       <a-entity id="tuba"  scale="8 8 8" position="4 2.2 -5" class="vientos"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralamarillotuba.glb?v=1705931875983"></a-entity>
-      
-      <a-entity id="clarinete"  scale="2 2 2" position="0 2 -2.5" class="vientos"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipalflauta.glb?v=1705931872742"></a-entity>
-      
-      <a-entity id="flauta" scale=".5 .5 .5" position="-1.5 -1.5 0" rotation="0 0 0" class="cuerdas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/seahorsedirector.glb?v=1705931878932"></a-entity>
-      
-      <!-- cuerdas -->
-      <a-entity id="arpa"  scale="30 40 10" position="15 5 0" class="cuerdas"
-                gltf-model="https://cdn.glitch.global/8f1284bb-9412-41f0-9d25-acd4c21d36b9/coralrosaarpa.glb?v=1705931878331"></a-entity>
-      
-      <a-entity id="contrabajo" scale="0.1 0.1 0.1" position="7 0 -1" class="cuerdas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacontrabajo.glb?v=1705931874694"></a-entity>
-      
-      <a-entity id="violoncello" scale="0.03 0.03 0.03" position="2.5 0 4" class="cuerdas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonalilavioloncello.glb?v=1705931875034"></a-entity>
-      
-      <a-entity id="violin" scale="3 3 3" position="-2.5 1.5 3" class="cuerdas"
-                gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralrojoviolin.glb?v=1705931877928"
-                sound="src: #secuenciador; on: click"
-                color-interaction
-                data-hover-color="yellow"></a-entity>
+      <a-entity
+        id="tuba"
+        scale="8 8 8"
+        position="4 2.2 -5"
+        class="vientos"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralamarillotuba.glb?v=1705931875983"
+      ></a-entity>
 
+      <a-entity
+        id="clarinete"
+        scale="2 2 2"
+        position="0 2 -2.5"
+        class="vientos"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipalflauta.glb?v=1705931872742"
+      ></a-entity>
+
+      <a-entity
+        id="flauta"
+        scale=".5 .5 .5"
+        position="-1.5 -1.5 0"
+        rotation="0 0 0"
+        class="cuerdas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/seahorsedirector.glb?v=1705931878932"
+      ></a-entity>
+
+      <!-- cuerdas -->
+      <a-entity
+        id="arpa"
+        scale="30 40 10"
+        position="15 5 0"
+        class="cuerdas"
+        gltf-model="https://cdn.glitch.global/8f1284bb-9412-41f0-9d25-acd4c21d36b9/coralrosaarpa.glb?v=1705931878331"
+      ></a-entity>
+
+      <a-entity
+        id="contrabajo"
+        scale="0.1 0.1 0.1"
+        position="7 0 -1"
+        class="cuerdas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacontrabajo.glb?v=1705931874694"
+      ></a-entity>
+
+      <a-entity
+        id="violoncello"
+        scale="0.03 0.03 0.03"
+        position="2.5 0 4"
+        class="cuerdas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonalilavioloncello.glb?v=1705931875034"
+      ></a-entity>
+
+      <a-entity
+        id="violin"
+        scale="3 3 3"
+        position="-2.5 1.5 3"
+        class="cuerdas"
+        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralrojoviolin.glb?v=1705931877928"
+        sound="src: #secuenciador; on: click"
+        color-interaction
+        data-hover-color="yellow"
+      ></a-entity>
 
       <!-- Arrecife de coral para la caja de ritmo -->
       <a-box
@@ -99,12 +166,7 @@
       ></a-cylinder>
 
       <!-- Arrecife de coral para las melodías -->
-      <a-sphere
-        position="3 0 -4"
-        color="red"
-        radius="1"
-        
-      ></a-sphere>
+      <a-sphere position="3 0 -4" color="red" radius="1"></a-sphere>
 
       <!-- Fondo oceánico -->
       <a-plane
