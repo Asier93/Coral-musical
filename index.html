@@ -34,15 +34,21 @@
       <a-sky src="#skybox" rotation="0 220 0"></a-sky>
 
       <!-- logo -->
-      <a-image src="#logo" position="0 1 -5" scale="10 10 10">
+      <a-image src="#logo" position="0 3 2" scale="10 10 10">
         <a-animation attribute="opacity" dur="5000" to="0"></a-animation>
-        <a-link href="pentatonica.html"></a-link>
-      </a-image>
+      </a-image>    
+
+      <!-- objeto transparente delante del logo -->
+<!-- objeto transparente delante del logo -->
+<a-entity geometry="primitive: box; width: 1; height: 1; depth: 1" material="color: #FFF; opacity: 0" position="0 -2 4">
+  <a-link href="pentatonica.html"></a-link>
+</a-entity>
+      
 
       <!-- Componentes para interactividad -->
       <!-- Cámara con controles de mirada y teclado-->
       <!-- Camera User View 2 Height -->
-      <a-entity id="cameraRig" position="0 1.6 2" rotation="0 0 0">
+      <a-entity id="cameraRig" position="0 1.6 10" rotation="0 0 0">
         <a-entity
           id="head"
           position="0 0 0"
@@ -76,5 +82,12 @@
         </a-entity>
       </a-entity>
     </a-scene>
+
+    <script>
+      // Agrega un controlador de eventos de clic al cubo
+      document.querySelector('#logo-cube').addEventListener('click', function () {
+        window.location.href = 'pentatonica.html';
+      });
+    </script>
   </body>
 </html>
