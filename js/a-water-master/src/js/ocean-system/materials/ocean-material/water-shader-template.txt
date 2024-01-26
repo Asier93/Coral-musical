@@ -1,0 +1,37 @@
+//This helps
+//--------------------------v
+//https://github.com/mrdoob/three.js/wiki/Uniforms-types
+AWater.AOcean.Materials.Ocean.waterMaterial = {
+  uniforms: {
+    displacementMap: {type: 't', value: null},
+    smallNormalMap: {type: 't', value: null},
+    largeNormalMap: {type: 't', value: null},
+    smallNormalMapVelocity: {type: 'vec2', value: new THREE.Vector2()},
+    largeNormalMapVelocity: {type: 'vec2', value: new THREE.Vector2()},
+    isBelowWater: {type: 'i', value: 0},
+    reflectionCubeMap: {value: null},
+    refractionCubeMap: {value: null},
+    depthCubeMap: {value: null},
+    matrixWorld: {type: 'mat4', value: new THREE.Matrix4()},
+    sizeOfOceanPatch: {type: 'f', value: 1.0},
+    fogNear: {type: 'f', value: null},
+    fogFar: {type: 'f', value: null},
+    fogDensity: {type: 'f', value: null},
+    fogColor: {type: 'v3', value: new THREE.Color()},
+    t: {type: 'f', value: 0.0},
+    brightestDirectionalLight: {type: 'vec3', value: new THREE.Vector3(1.0,1.0,1.0)},
+    largeNormalMapStrength: {type: 'f', value: 0.45},
+    smallNormalMapStrength: {type: 'f', value: 0.35},
+    lightScatteringAmounts: {type: 'vec3', value: new THREE.Vector3(88.0, 108.0, 112.0)},
+    linearScatteringHeightOffset: {type: 'f', value: 10.0},
+    linearScatteringTotalScatteringWaveHeight: {type: 'f', value: 20.0}
+  },
+
+  fragmentShader: [
+    {fragment_glsl}
+  ].join('\n'),
+
+  vertexShader: [
+    {vertex_glsl}
+  ].join('\n'),
+};
