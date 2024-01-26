@@ -21,6 +21,7 @@
         "vr"
     ],
     "dependencies": {
+        "aframe-physics-system": "^4.0.2",
         "aframe-teleport-controls": "^0.3.1",
         "howler": "^2.2.4"
     }
