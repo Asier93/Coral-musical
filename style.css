@@ -6,4 +6,7 @@ element {
     -webkit-transition: property 0.3s ease;
     transition: property 0.3s ease;
 }
-  
+
+.link {
+    outline: none !important;
+}
