@@ -9,4 +9,32 @@ element {
 
 .link {
     outline: none !important;
+    background-color: none !important;
+}
+
+#menu {
+    -webkit-animation-name: example-animation;
+    animation-name: example-animation;
+    cursor: -webkit-grab;
+    cursor: grab;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 15px;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: rgba(255, 184, 184, 0.8); /* Fondo semitransparente */
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif; /* Fuente Ubuntu */
+    font-size: 30px;
+}
+
+#menu a {
+    color: #c86161;
+    text-decoration: none;
+    margin-right: 10px;
+    outline: none !important;
+}
+
+#menu a:hover {
+    color: #1b4ca0;
 }
