@@ -1,93 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <!-- For Chrome, Edge, and other browsers -->
-    <meta name="theme-color" content="#ffffff" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Coral Musical</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="./js/sonido.js"></script>
+  <script src="https://unpkg.com/howler@2.2.4/dist/howler.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <button id="menu-button">☰</button>
 
-    <!-- For Firefox -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="color:toolbar" content="#ffffff" />
-    <title>Coral Musical</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="./js/sonido.js"></script>
-    <script src="https://unpkg.com/howler@2.2.4/dist/howler.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    
-  </head>
-  <body>
-    <a-scene cursor="rayOrigin: mouse">
-      <a-assets>
-        <img src="./assets/textures/skyboxmasarena.jpg" id="skybox" alt="Fondo de arena" />
-        <img src="./assets/textures/LogoCoralMusical.png" id="logo" alt="Logo Coral Musical" />
-      </a-assets>
+  <div id="menu" style="position: absolute; z-index: 1; top: 10px; left: 10px;">
+    <a href="#">Inicio</a> |
+    <a href="pentatonica.html">Pentatónica</a>
+  </div>
 
-      <!-- Skybox -->
-      <a-sky src="#skybox" rotation="0 220 0"></a-sky>
+  <a-scene cursor="rayOrigin: mouse">
+    <a-assets>
+      <img src="./assets/textures/skyboxmasarena.jpg" id="skybox" alt="Fondo de arena" />
+      <img src="./assets/textures/LogoCoralMusical.png" id="logo" alt="Logo Coral Musical" />
+    </a-assets>
 
-      <!-- logo -->
-      <a-image src="#logo" position="0 3 2" scale="10 10 10">
-        <a-animation attribute="opacity" dur="5000" to="0"></a-animation>
-      </a-image>    
+    <!-- Skybox -->
+    <a-sky src="#skybox" rotation="0 220 0"></a-sky>
 
-      <!-- objeto transparente delante del logo -->
-<!-- objeto transparente delante del logo -->
-<a-entity geometry="primitive: box; width: 1; height: 1; depth: 1" material="color: #FFF; opacity: 0" position="0 -2 4">
-  <a-link href="pentatonica.html"></a-link>
-</a-entity>
-      
+    <!-- logo -->
+    <a-image src="#logo" position="0 3 2" scale="10 10 10">
+      <a-animation attribute="opacity" dur="5000" to="0"></a-animation>
+    </a-image>    
 
-      <!-- Componentes para interactividad -->
-      <!-- Cámara con controles de mirada y teclado-->
-      <!-- Camera User View 2 Height -->
-      <a-entity id="cameraRig" position="0 1.6 10" rotation="0 0 0">
-        <a-entity
-          id="head"
-          position="0 0 0"
-          camera="userHeight:1.6"
-          rotation="0 0 0"
-          data-aframe-inspector-original-camera
-          look-controls="pointerLockEnabled:true"
-        >
-          <!-- Cursor con mirilla (anillo) -->
-          <a-entity cursor="rayOrigin: mouse">
-            <a-ring
-              position="0 0 -1"
-              scale="0.02 0.02 0.02"
-              color="yellow"
-              id="cursorRing"
-              animation="property: scale; to: 0.04 0.04 0.04; loop: true; dur: 1000"
-            ></a-ring>
-          </a-entity>
+    <!-- objeto transparente delante del logo -->
+    <a-entity geometry="primitive: box; width: 1; height: 1; depth: 1" material="color: #FFF; opacity: 0" position="0 -2 4">
+      <a-link href="pentatonica.html"></a-link>
+    </a-entity>
 
-          <a-entity
-            position="0.1 -0.1 0"
-            touch-listener
-            teleport-controls="cameraRig: #cameraRig;
-         teleportOrigin: #head;
-         startEvents:starttouch;
-         endEvents:endtouch;
-         curveShootingSpeed:15;
-         hitCylinderRadius:1;
-         collisionEntities: [ground]"
-          ></a-entity>
+    <!-- Componentes para interactividad -->
+    <!-- Cámara con controles de mirada y teclado-->
+    <!-- Camera User View 2 Height -->
+    <a-entity id="cameraRig" position="0 1.6 10" rotation="0 0 0">
+      <a-entity
+        id="head"
+        position="0 0 0"
+        camera="userHeight:1.6"
+        rotation="0 0 0"
+        data-aframe-inspector-original-camera
+        look-controls="pointerLockEnabled:true"
+      >
+        <!-- Cursor con mirilla (anillo) -->
+        <a-entity cursor="rayOrigin: mouse">
+          <a-ring
+            position="0 0 -1"
+            scale="0.02 0.02 0.02"
+            color="yellow"
+            id="cursorRing"
+            animation="property: scale; to: 0.04 0.04 0.04; loop: true; dur: 1000"
+          ></a-ring>
         </a-entity>
-      </a-entity>
-    </a-scene>
 
-    <script>
-      // Agrega un controlador de eventos de clic al cubo
-      document.querySelector('#logo-cube').addEventListener('click', function () {
-        window.location.href = 'pentatonica.html';
+        <a-entity
+          position="0.1 -0.1 0"
+          touch-listener
+          teleport-controls="cameraRig: #cameraRig;
+       teleportOrigin: #head;
+       startEvents:starttouch;
+       endEvents:endtouch;
+       curveShootingSpeed:15;
+       hitCylinderRadius:1;
+       collisionEntities: [ground]"
+        ></a-entity>
+      </a-entity>
+    </a-entity>
+  </a-scene>
+
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('menu-button').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
       });
-    </script>
-  </body>
+    });
+  </script> -->
+</body>
 </html>
