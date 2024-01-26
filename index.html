@@ -18,6 +18,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/tap-to-teleport.js" type="text/javascript"></script>
     <script src="./js/interaction.js" type="text/javascript"></script>
+    <script src="./js/sonido.js"></script>
+    <script src="https://unpkg.com/howler@2.2.4/dist/howler.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <a-scene cursor="rayOrigin: mouse">
@@ -35,7 +42,7 @@
         id="algaprincipal02"
         scale="4 4 4"
         position="7 2 -15"
-        class="algas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipal02.glb?v=1705931872333"
       ></a-entity>
 
@@ -43,7 +50,7 @@
         id="algasrelleno"
         scale="6 6 6"
         position="-10 2.4 -15"
-        class="algas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algasrelleno.glb?v=1705931873644"
       ></a-entity>
 
@@ -51,7 +58,7 @@
       <a-entity
         scale="0.1 0.1 0.1"
         position="0 0 -15"
-        class="algas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralbase.glb?v=1705931876384"
       ></a-entity>
 
@@ -61,7 +68,7 @@
         id="campanastubulares"
         scale=".5 .5 .5"
         position="-5 0 -10"
-        class="percusion"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacampanastubulares.glb?v=1705931874189"
       ></a-entity>
 
@@ -69,7 +76,7 @@
         id="marimba"
         scale="1 1 1"
         position="-9 -32 -10"
-        class="percusion"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralmoradomarimba.glb?v=1705931877526"
         sound="src: #cajaRitmo; on: click"
         color-interaction
@@ -81,7 +88,7 @@
         id="tuba"
         scale="8 8 8"
         position="4 2.2 -5"
-        class="vientos"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralamarillotuba.glb?v=1705931875983"
       ></a-entity>
 
@@ -89,7 +96,7 @@
         id="clarinete"
         scale="2 2 2"
         position="0 2 -2.5"
-        class="vientos"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipalflauta.glb?v=1705931872742"
       ></a-entity>
 
@@ -98,8 +105,9 @@
         scale=".5 .5 .5"
         position="-1.5 -1.5 0"
         rotation="0 0 0"
-        class="cuerdas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/seahorsedirector.glb?v=1705931878932"
+        data-audio="./assets/audio/flauta.mp3"
       ></a-entity>
 
       <!-- cuerdas -->
@@ -107,7 +115,7 @@
         id="arpa"
         scale="30 40 10"
         position="15 5 0"
-        class="cuerdas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f1284bb-9412-41f0-9d25-acd4c21d36b9/coralrosaarpa.glb?v=1705931878331"
       ></a-entity>
 
@@ -115,27 +123,29 @@
         id="contrabajo"
         scale="0.1 0.1 0.1"
         position="7 0 -1"
-        class="cuerdas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacontrabajo.glb?v=1705931874694"
+        data-audio="./assets/audio/contrabajo.mp3"
       ></a-entity>
 
       <a-entity
         id="violoncello"
         scale="0.03 0.03 0.03"
         position="2.5 0 4"
-        class="cuerdas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonalilavioloncello.glb?v=1705931875034"
+        data-audio="./assets/audio/violonchelo.mp3"
       ></a-entity>
 
       <a-entity
         id="violin"
         scale="3 3 3"
         position="-2.5 1.5 3"
-        class="cuerdas"
+        class="instrument"
         gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralrojoviolin.glb?v=1705931877928"
-        sound="src: #secuenciador; on: click"
         color-interaction
         data-hover-color="yellow"
+        data-audio="./assets/audio/violin.mp3"
       ></a-entity>
 
       <!-- Arrecife de coral para la caja de ritmo -->
