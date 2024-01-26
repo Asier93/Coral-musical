@@ -22,12 +22,12 @@
   <body>
     <a-scene cursor="rayOrigin: mouse">
       <a-assets>
-        <img src="./assets/textures/skyboxmasarena.jpg" id="skybox" alt="Fondo de arena" />
+        <img src="./assets/textures/discotecacoral.jpg" id="skybox" alt="Fondo de arena" />
         <img src="./assets/textures/LogoCoralMusical.png" id="logo" alt="Logo Coral Musical" />
       </a-assets>
 
       <!-- Skybox -->
-      <a-sky src="#skybox"></a-sky>
+      <a-sky src="#skybox" rotation="0 270 0"></a-sky>
 
       <!-- relleno -->
       <!-- algas -->
@@ -184,13 +184,15 @@
           id="head"
           position="0 0 0"
           camera="userHeight:2"
+          rotation="0 0 0"
+          data-aframe-inspector-original-camera
           look-controls="pointerLockEnabled:true"
         >
           <!-- Cursor con mirilla (anillo) -->
           <a-entity cursor="rayOrigin: mouse">
             <a-ring
               position="0 0 -1"
-              scale="0.03 0.03 0.03"
+              scale="0.02 0.02 0.02"
               color="yellow"
               id="cursorRing"
               animation="property: scale; to: 0.04 0.04 0.04; loop: true; dur: 1000"
