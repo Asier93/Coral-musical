@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Coral Musical VR Experience</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="./js/tap-to-teleport.js"></script>
+    <script src="./js/asier.js"></script>
+    <script src="https://unpkg.com/howler@2.2.4/dist/howler.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+      <a-assets>
+        <img
+          src="./assets/textures/underwaterskybox.jpg"
+          id="skybox"
+          alt="Fondo de arena"
+        />
+        <audio id="cajaRitmo" src="./assets/audio/percusiones.mp3"></audio>
+        <audio id="secuenciador" src="./assets/audio/rattle-bass.mp3"></audio>
+        <audio id="melodias" src="./assets/audio/oboe-staccato.mp3"></audio>
+      </a-assets>
+
+      <a-sky src="#skybox"></a-sky>
+
+      <a-box
+        position="-3 0 -4"
+        color="blue"
+        scale="1 2 1"
+        color-interaction
+        data-hover-color="red"
+      ></a-box>
+
+      <a-cylinder
+        position="0 0 -8"
+        color="green"
+        radius="1"
+        height="2"
+        sound="src: #secuenciador; on: click"
+        color-interaction
+        data-hover-color="yellow"
+      ></a-cylinder>
+
+      <a-sphere
+        position="3 0 -4"
+        color="red"
+        radius="1"
+        sound="src: #melodias; on: click"
+        color-interaction
+        data-hover-color="purple"
+      ></a-sphere>
+
+      <a-plane
+        position="0 -35 0"
+        rotation="-90 0 0"
+        width="20"
+        height="20"
+        color="#DEE1D4"
+      ></a-plane>
+
+      <!-- Componentes para interactividad -->
+      <a-entity id="cameraRig" position="0 1.6 0">
+        <a-entity
+          id="head"
+          position="0 0 0"
+          camera="userHeight:1.6"
+          look-controls="pointerLockEnabled:true"
+        >
+          <!-- Cursor con mirilla (anillo) -->
+          <a-entity cursor="rayOrigin: mouse">
+            <a-ring
+              position="0 0 -1"
+              scale="0.03 0.03 0.03"
+              color="yellow"
+              id="cursorRing"
+              animation="property: scale; to: 0.04 0.04 0.04; loop: true; dur: 1000"
+            ></a-ring>
+          </a-entity>
+
+          <a-entity
+            position="0.1 -0.1 0"
+            touch-listener
+            teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents:starttouch; endEvents:endtouch; curveShootingSpeed:15; hitCylinderRadius:1; collisionEntities: [ground]"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
