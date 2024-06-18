@@ -4,7 +4,7 @@ Este proyecto proporciona una experiencia de realidad virtual (VR) inmersiva uti
 
 Instrucciones de Uso
 
-Abre el archivo index.html en tu navegador web.
+Abre el enlace https://coral-musical.vercel.app/ en tu navegador web.
 Usa el ratón para girar la cámara y explorar la escena submarina.
 Haz clic en los distintos elementos de la escena para reproducir los sonidos asociados.
 
