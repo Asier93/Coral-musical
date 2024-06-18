@@ -1,6 +1,8 @@
 <h1>Coral Musical VR Experience con A-Frame </h1>
 
-Este proyecto proporciona una experiencia de realidad virtual (VR) inmersiva utilizando A-Frame para crear una escena 3D submarina. La música original fue compuesta en Musescore. La escena incluye varios tipos de corales, algas y un caballito de mar, cada uno representando un instrumento musical diferente. La cámara está fija pero permite rotación para explorar el entorno.
+Este proyecto proporciona una experiencia de realidad virtual (VR) inmersiva utilizando A-Frame para crear una escena 3D submarina. 
+La música original fue compuesta en Musescore. La escena incluye varios tipos de corales, algas y un caballito de mar, cada uno representando un instrumento musical diferente.
+La cámara está fija pero permite rotación para explorar el entorno.
 
 <h1>Instrucciones de Uso</h1>
 
