@@ -50,7 +50,7 @@
         scale="1 1 1"
         position="-2 -32 5.5"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralmoradomarimba.glb?v=1705931877526"
+        gltf-model="./assets/models/coralmoradomarimba.glb"
       >
       <a-entity mixin="bubble-particles" position="0 2 -5"></a-entity>
       </a-entity>
@@ -61,7 +61,7 @@
         scale="10 11 9"
         position="4.3 2.2 -4.5"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralamarillotuba.glb?v=1705931875983"
+        gltf-model="./assets/models/coralamarillotuba.glb"
         data-audio="./assets/audio/tuba.mp3"
         animation__mouseover="property: scale; to: 10.5 11.5 9.5; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: 10 11 9; dur: 200; startEvents: mouseleave; pauseEvents: click"
@@ -73,7 +73,7 @@
         scale="2 2 2"
         position="0 2 -1"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/algaprincipalflauta.glb?v=1705931872742"
+        gltf-model="./assets/models/algaprincipal03.glb"
         data-audio="./assets/audio/oboe.mp3"
         animation="property: position; to: 0 2.3 -1"
         animation__mouseover="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter; pauseEvents: click"
@@ -87,7 +87,7 @@
         position="-1.5 -1.5 3"
         rotation="0 0 0"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/seahorsedirector.glb?v=1705931878932"
+        gltf-model="./assets/models/seahorsedirector.glb"
         data-audio="./assets/audio/flauta.mp3"
         animation__mouseover="property: scale; to: 0.52 0.52 0.52; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: .5 .5 .5; dur: 200; startEvents: mouseleave; pauseEvents: click"
@@ -95,23 +95,23 @@
       ></a-entity>
 
       <!-- cuerdas -->
-      <a-entity
+      <!-- <a-entity
         id="arpa"
         scale="30 40 11"
         position="15 5 0"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f1284bb-9412-41f0-9d25-acd4c21d36b9/coralrosaarpa.glb?v=1705931878331"
+        gltf-model="./assets/models/coralrosaarpa.glb"
         animation__mouseover="property: scale; to: 30.2 40.2 11.2; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: 31 41 11; dur: 200; startEvents: mouseleave; pauseEvents: click"
         event-set__click="_event: click; animation__clickstart: property: scale; to: 30.5 40.5 11.5; dur: 200; startEvents: click; pauseEvents: click; animation__clickend: property: scale; to: 31 31 31; dur: 200; startEvents: click; pauseEvents: click"
-      ></a-entity>
+      ></a-entity> -->
 
       <a-entity
         id="contrabajo"
         scale="0.1 0.1 0.1"
         position="7 0 1"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacontrabajo.glb?v=1705931874694"
+        gltf-model="./assets/models/anemonacontrabajo.glb"
         data-audio="./assets/audio/contrabajo.mp3"
         animation__mouseover="property: scale; to: 0.12 0.12 0.12; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: 0.11 0.11 0.11; dur: 200; startEvents: mouseleave; pauseEvents: click"
@@ -123,7 +123,7 @@
         scale="0.03 0.03 0.03"
         position="1.7 0 4.8"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonalilavioloncello.glb?v=1705931875034"
+        gltf-model="./assets/models/anemonalilavioloncello.glb"
         data-audio="./assets/audio/violonchelo.mp3"
         animation__mouseover="property: scale; to: 0.032 0.032 0.032; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: 0.031 0.031 0.031; dur: 200; startEvents: mouseleave; pauseEvents: click"
@@ -135,7 +135,7 @@
         scale="3 3 3"
         position="-5 1.5 3.5"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/coralrojoviolin.glb?v=1705931877928"
+        gltf-model="./assets/models/coralrojoviolin.glb"
         data-audio="./assets/audio/violin.mp3"
         animation__mouseover="property: scale; to: 3.2 3.2 3.2; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: 3.1 3.1 3.1; dur: 200; startEvents: mouseleave; pauseEvents: click"
@@ -149,7 +149,7 @@
         scale=".5 .5 .5"
         position="-5 0 -2"
         class="instrument"
-        gltf-model="https://cdn.glitch.global/8f7284bb-9412-41f0-9d25-acd4c21d36b9/anemonacampanastubulares.glb?v=1705931874189"
+        gltf-model="./assets/models/anemonacampanastubulares.glb"
         data-audio="./assets/audio/viola.mp3"
         animation__mouseover="property: scale; to: .52 .52 .52; dur: 200; startEvents: mouseenter; pauseEvents: click"
         animation__mouseleave="property: scale; to: .51 .51 .51; dur: 200; startEvents: mouseleave; pauseEvents: click"
