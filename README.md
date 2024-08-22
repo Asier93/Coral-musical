@@ -4,6 +4,8 @@ Este proyecto proporciona una experiencia de realidad virtual (VR) inmersiva uti
 La música original fue compuesta en Musescore. La escena incluye varios tipos de corales, algas y un caballito de mar, cada uno representando un instrumento musical diferente.
 La cámara está fija pero permite rotación para explorar el entorno.
 
+![Captura del escenario](Pentatonica_coral.png)
+
 <h1>Instrucciones de Uso</h1>
 
 Abre el enlace https://coral-musical.vercel.app/ en tu navegador web.
